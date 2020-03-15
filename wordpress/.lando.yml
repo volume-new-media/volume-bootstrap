@@ -1,0 +1,15 @@
+name: headless-backend
+recipe: wordpress
+config:
+  php: '7.2'
+  via: apache
+  webroot: ./web
+  database: mysql:5.7
+  xdebug: true
+  config:
+    php: .lando.php.ini
+services:
+  pma:
+    type: phpmyadmin
+    hosts:
+      - database

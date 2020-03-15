@@ -1,0 +1,14 @@
+name: headless-nextjs
+services:
+  node:
+    type: node:10
+    globals:
+      yarn: latest
+    ssl: false
+    port: 3000
+proxy:
+  node:
+    - headless-nextjs.lndo.site:3000
+tooling:
+  yarn:
+    service: node
