@@ -1,4 +1,4 @@
-name: headless-backend
+name: headless-wordpress
 recipe: wordpress
 config:
   php: '7.2'
