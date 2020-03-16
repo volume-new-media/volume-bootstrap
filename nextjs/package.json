@@ -13,10 +13,5 @@
     "react": "16.13.0",
     "react-dom": "16.13.0",
     "react-foundation": "^0.9.6"
-  },
-  "devDependencies": {
-    "@types/node": "^13.9.1",
-    "@types/react": "^16.9.23",
-    "typescript": "^3.8.3"
   }
 }
