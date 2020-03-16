@@ -1,6 +1,7 @@
 {
     "name": "volume/bedrock",
     "type": "project",
+    "license": "COMMERCIAL",
     "private": true,
     "repositories": [
         {
@@ -14,14 +15,14 @@
             "package": {
                 "name": "advanced-custom-fields/advanced-custom-fields-pro",
                 "version": "5.8.3",
-                "type": "wordpress-muplugin",
+                "type": "wordpress-plugin",
                 "dist": {
                     "type": "zip",
                     "url": "https://connect.advancedcustomfields.com/index.php?a=download&p=pro&k={%ACF_PRO_KEY}&t={%version}"
                 },
                 "require": {
-                    "composer/installers": "^1.4",
-                    "ffraenz/private-composer-installer": "^2.0"
+                    "composer/installers": "^1.8.0",
+                    "ffraenz/private-composer-installer": "^4.0"
                 }
             }
         },{
@@ -29,32 +30,31 @@
             "package": {
                 "name": "gravity-forms/gravity-forms",
                 "version": "2.4.15.13",
-                "type": "wordpress-muplugin",
+                "type": "wordpress-plugin",
                 "dist": {
                     "type": "zip",
                     "url": "lib/gravityforms_{%version}.zip"
                 },
                 "require": {
-                    "composer/installers": "^1.4",
-                    "ffraenz/private-composer-installer": "^2.0"
+                    "composer/installers": "^1.8",
+                    "ffraenz/private-composer-installer": "^4.0"
                 }
             }
         }
     ],
     "require": {
         "php": ">=7.1",
-        "composer/installers": "^1.7",
-        "vlucas/phpdotenv": "^3.4.0",
+        "composer/installers": "^1.8",
+        "vlucas/phpdotenv": "^4.1.0",
         "oscarotero/env": "^1.2.0",
-        "roots/wordpress": "^5.0.0",
+        "roots/wordpress": "5.3.2",
         "roots/wp-config": "1.0.0",
         "roots/wp-password-bcrypt": "1.0.0",
+
         "advanced-custom-fields/advanced-custom-fields-pro": "^5.0.0",
         "gravity-forms/gravity-forms": "^2.0.0",
+        "wpackagist-plugin/disable-comments": "^1.0.0",
         "wpackagist-plugin/classic-editor": "^1.0.0",
-        "wpackagist-plugin/woocommerce": "^3.8.0",
-        "wpackagist-plugin/woocommerce-admin": "*",
-        "wpackagist-plugin/woocommerce-google-analytics-integration": "^1.0.0",
         "deliciousbrains-plugin/wp-migrate-db-pro": "*",
         "deliciousbrains-plugin/wp-migrate-db-pro-media-files": "*"
     },
@@ -73,11 +73,10 @@
         "installer-paths": {
             "web/app/mu-plugins/{$name}/": [
                 "type:wordpress-muplugin",
-                "wpackagist-plugin/acf-to-rest-api",
-                "wpackagist-plugin/classic-editor",
-                "wpackagist-plugin/woocommerce",
-                "wpackagist-plugin/woocommerce-admin",
-                "wpackagist-plugin/woocommerce-google-analytics-integration"
+                "advanced-custom-fields/advanced-custom-fields-pro",
+                "wpackagist-plugin/disable-comments",
+                "gravity-forms/gravity-forms",
+                "wpackagist-plugin/classic-editor"
             ],
             "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
             "web/app/themes/{$name}/": ["type:wordpress-theme"]

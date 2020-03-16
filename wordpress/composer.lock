@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b8400a1648b4179e9e98b6af85eecf18",
+    "content-hash": "241af42743bab44b2ab42f0f838de058",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -14,10 +14,10 @@
                 "url": "https://connect.advancedcustomfields.com/index.php?a=download&p=pro&k={%ACF_PRO_KEY}&t=5.8.3"
             },
             "require": {
-                "composer/installers": "^1.4",
-                "ffraenz/private-composer-installer": "^2.0"
+                "composer/installers": "^1.8.0",
+                "ffraenz/private-composer-installer": "^4.0"
             },
-            "type": "wordpress-muplugin"
+            "type": "wordpress-plugin"
         },
         {
             "name": "composer/installers",
@@ -169,27 +169,27 @@
         },
         {
             "name": "ffraenz/private-composer-installer",
-            "version": "v2.0.0",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ffraenz/private-composer-installer.git",
-                "reference": "dc54b0200952f8c03a08b5593a933c308343a2a9"
+                "reference": "c6895f920b22921577f9433763e14ae442e6ab9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ffraenz/private-composer-installer/zipball/dc54b0200952f8c03a08b5593a933c308343a2a9",
-                "reference": "dc54b0200952f8c03a08b5593a933c308343a2a9",
+                "url": "https://api.github.com/repos/ffraenz/private-composer-installer/zipball/c6895f920b22921577f9433763e14ae442e6ab9b",
+                "reference": "c6895f920b22921577f9433763e14ae442e6ab9b",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.0.0",
-                "php": "^5.6 || ^7.0",
-                "vlucas/phpdotenv": "^3.0"
+                "php": "^7.1",
+                "vlucas/phpdotenv": "^4.0"
             },
             "require-dev": {
                 "composer/composer": "1.0.*",
-                "phpunit/phpunit": "5.7.* || ^6.3",
-                "zendframework/zend-coding-standard": "^1.0"
+                "laminas/laminas-coding-standard": "^1.0",
+                "phpunit/phpunit": "^8.0"
             },
             "type": "composer-plugin",
             "extra": {
@@ -220,7 +220,7 @@
                 "wordpress",
                 "wp"
             ],
-            "time": "2019-01-30T21:44:48+00:00"
+            "time": "2020-02-20T18:46:16+00:00"
         },
         {
             "name": "gravity-forms/gravity-forms",
@@ -230,10 +230,10 @@
                 "url": "lib/gravityforms_2.4.15.13.zip"
             },
             "require": {
-                "composer/installers": "^1.4",
-                "ffraenz/private-composer-installer": "^2.0"
+                "composer/installers": "^1.8",
+                "ffraenz/private-composer-installer": "^4.0"
             },
-            "type": "wordpress-muplugin"
+            "type": "wordpress-plugin"
         },
         {
             "name": "oscarotero/env",
@@ -585,24 +585,25 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v3.6.1",
+            "version": "v4.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "8f7961f7b9deb3b432452c18093cf16f88205902"
+                "reference": "939dfda2d7267ac8fc53ac3d642b5de357554c39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/8f7961f7b9deb3b432452c18093cf16f88205902",
-                "reference": "8f7961f7b9deb3b432452c18093cf16f88205902",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/939dfda2d7267ac8fc53ac3d642b5de357554c39",
+                "reference": "939dfda2d7267ac8fc53ac3d642b5de357554c39",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.4 || ^7.0",
-                "phpoption/phpoption": "^1.5",
+                "php": "^5.5.9 || ^7.0",
+                "phpoption/phpoption": "^1.7.2",
                 "symfony/polyfill-ctype": "^1.9"
             },
             "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.3",
                 "ext-filter": "*",
                 "phpunit/phpunit": "^4.8.35 || ^5.0 || ^6.0 || ^7.0"
             },
@@ -612,7 +613,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.6-dev"
+                    "dev-master": "4.1-dev"
                 }
             },
             "autoload": {
@@ -642,25 +643,7 @@
                 "env",
                 "environment"
             ],
-            "time": "2020-03-12T13:44:00+00:00"
-        },
-        {
-            "name": "wpackagist-plugin/acf-to-rest-api",
-            "version": "3.2.0",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/acf-to-rest-api/",
-                "reference": "tags/3.2.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/acf-to-rest-api.3.2.0.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/acf-to-rest-api/"
+            "time": "2020-03-12T13:44:15+00:00"
         },
         {
             "name": "wpackagist-plugin/classic-editor",
@@ -681,58 +664,22 @@
             "homepage": "https://wordpress.org/plugins/classic-editor/"
         },
         {
-            "name": "wpackagist-plugin/woocommerce",
-            "version": "3.9.3",
+            "name": "wpackagist-plugin/disable-comments",
+            "version": "1.10.2",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/woocommerce/",
-                "reference": "tags/3.9.3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/woocommerce.3.9.3.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/woocommerce/"
-        },
-        {
-            "name": "wpackagist-plugin/woocommerce-admin",
-            "version": "1.0.0",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/woocommerce-admin/",
+                "url": "https://plugins.svn.wordpress.org/disable-comments/",
                 "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/woocommerce-admin.zip?timestamp=1583464739"
+                "url": "https://downloads.wordpress.org/plugin/disable-comments.zip?timestamp=1563798431"
             },
             "require": {
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/woocommerce-admin/"
-        },
-        {
-            "name": "wpackagist-plugin/woocommerce-google-analytics-integration",
-            "version": "1.4.19",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/woocommerce-google-analytics-integration/",
-                "reference": "tags/1.4.19"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/woocommerce-google-analytics-integration.1.4.19.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/woocommerce-google-analytics-integration/"
+            "homepage": "https://wordpress.org/plugins/disable-comments/"
         }
     ],
     "packages-dev": [
