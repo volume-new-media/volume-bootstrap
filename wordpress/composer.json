@@ -1,46 +1,95 @@
 {
-  "name": "volume/bedrock-headless",
-  "type": "project",
-  "private": true,
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://wpackagist.org"
-    }
-  ],
-  "require": {
-    "php": ">=7.1",
-    "composer/installers": "^1.8",
-    "vlucas/phpdotenv": "^4.1.0",
-    "oscarotero/env": "^1.2.0",
-    "roots/wordpress": "5.3.2",
-    "roots/wp-config": "1.0.0",
-    "roots/wp-password-bcrypt": "1.0.0"
-  },
-  "require-dev": {
-    "squizlabs/php_codesniffer": "^3.5.4",
-    "roave/security-advisories": "dev-master"
-  },
-  "config": {
-    "optimize-autoloader": true,
-    "preferred-install": "dist"
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "extra": {
-    "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
-      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
-      "web/app/themes/{$name}/": ["type:wordpress-theme"]
-    },
-    "wordpress-install-dir": "web/wp"
-  },
-  "scripts": {
-    "post-root-package-install": [
-      "php -r \"copy('.env.example', '.env');\""
+    "name": "volume/bedrock",
+    "type": "project",
+    "private": true,
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        },{
+            "type": "composer",
+            "url": "https://composer.deliciousbrains.com"
+        },{
+            "type": "package",
+            "package": {
+                "name": "advanced-custom-fields/advanced-custom-fields-pro",
+                "version": "5.8.3",
+                "type": "wordpress-muplugin",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://connect.advancedcustomfields.com/index.php?a=download&p=pro&k={%ACF_PRO_KEY}&t={%version}"
+                },
+                "require": {
+                    "composer/installers": "^1.4",
+                    "ffraenz/private-composer-installer": "^2.0"
+                }
+            }
+        },{
+        "type": "package",
+            "package": {
+                "name": "gravity-forms/gravity-forms",
+                "version": "2.4.15.13",
+                "type": "wordpress-muplugin",
+                "dist": {
+                    "type": "zip",
+                    "url": "lib/gravityforms_{%version}.zip"
+                },
+                "require": {
+                    "composer/installers": "^1.4",
+                    "ffraenz/private-composer-installer": "^2.0"
+                }
+            }
+        }
     ],
-    "test": [
-      "phpcs"
-    ]
-  }
+    "require": {
+        "php": ">=7.1",
+        "composer/installers": "^1.7",
+        "vlucas/phpdotenv": "^3.4.0",
+        "oscarotero/env": "^1.2.0",
+        "roots/wordpress": "^5.0.0",
+        "roots/wp-config": "1.0.0",
+        "roots/wp-password-bcrypt": "1.0.0",
+        "advanced-custom-fields/advanced-custom-fields-pro": "^5.0.0",
+        "gravity-forms/gravity-forms": "^2.0.0",
+        "wpackagist-plugin/classic-editor": "^1.0.0",
+        "wpackagist-plugin/woocommerce": "^3.8.0",
+        "wpackagist-plugin/woocommerce-admin": "*",
+        "wpackagist-plugin/woocommerce-google-analytics-integration": "^1.0.0",
+        "deliciousbrains-plugin/wp-migrate-db-pro": "*",
+        "deliciousbrains-plugin/wp-migrate-db-pro-media-files": "*"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.4.2",
+        "roave/security-advisories": "dev-master"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "installer-paths": {
+            "web/app/mu-plugins/{$name}/": [
+                "type:wordpress-muplugin",
+                "wpackagist-plugin/acf-to-rest-api",
+                "wpackagist-plugin/classic-editor",
+                "wpackagist-plugin/woocommerce",
+                "wpackagist-plugin/woocommerce-admin",
+                "wpackagist-plugin/woocommerce-google-analytics-integration"
+            ],
+            "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
+            "web/app/themes/{$name}/": ["type:wordpress-theme"]
+        },
+        "wordpress-install-dir": "web/wp"
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"copy('.env.example', '.env');\""
+        ],
+        "test": [
+            "phpcs"
+        ]
+    }
 }
