@@ -51,7 +51,6 @@
         "roots/wp-password-bcrypt": "1.0.0",
         "advanced-custom-fields/advanced-custom-fields-pro": "^5.0.0",
         "gravity-forms/gravity-forms": "^2.0.0",
-        "wpackagist-plugin/acf-to-rest-api": "^3.0.0",
         "wpackagist-plugin/classic-editor": "^1.0.0",
         "wpackagist-plugin/woocommerce": "^3.8.0",
         "wpackagist-plugin/woocommerce-admin": "*",
