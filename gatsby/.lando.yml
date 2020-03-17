@@ -1,0 +1,21 @@
+name: headless-gatsby
+services:
+  node:
+    type: node:10
+    globals:
+      yarn: latest
+      gatsby-cli: latest
+    cmd: gatsby telemetry --disable
+    ssl: false
+    port: 8000
+proxy:
+  node:
+    - headless-gatsby.lndo.site:8000
+tooling:
+  yarn:
+    service: node
+  gatsby:
+    service: node
+  develop:
+    service: node
+    cmd: gatsby develop
