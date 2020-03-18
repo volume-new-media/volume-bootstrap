@@ -1,13 +1,22 @@
 import { useRouter } from 'next/router'
 import fetch from 'node-fetch'
 
+import Layout from '../../components/layout'
+
 const Post = ({ post }) => {
     const router = useRouter()
     if (router.isFallback) {
-        return <pre>Loading...</pre>
+        return (
+          <Layout title="Loading...">
+            <pre style={{position: 'fixed', top: '50%', left: '50%'}}>Loading...</pre>
+          </Layout>
+        )
     }
     return (
-        <pre>Post: {JSON.stringify(post, null, 4)}</pre>
+      <Layout title={post.title.rendered}>
+          <h2>Post</h2>
+          <pre>{JSON.stringify(post, null, 4)}</pre>
+      </Layout>
     )
 }
 

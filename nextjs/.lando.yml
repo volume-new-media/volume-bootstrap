@@ -12,3 +12,6 @@ proxy:
 tooling:
   yarn:
     service: node
+  develop:
+    service: node
+    cmd: yarn dev
