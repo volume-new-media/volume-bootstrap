@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import Head from 'next/head'
 
+import { Navbar } from 'react-bulma-components';
+
 const Layout = ({ children, title = 'This is the default title' }) => {
   return (
     <div>
@@ -13,21 +15,38 @@ const Layout = ({ children, title = 'This is the default title' }) => {
 
       <header style={{textAlign: 'center'}}>
         <nav>
-          <ul style={{ listStyle: 'none' }}>
-            <li><Link href="/"><a>Home</a></Link></li>
-            <li><Link href="/about"><a>About</a></Link></li>
-            <li><Link href="/contact"><a>Contact</a></Link></li>
-          </ul>
+            <Navbar
+                color="info"
+                fixed={undefined} // 'top', 'bottom'
+                active={false}
+                transparent={false}
+            >
+                <Navbar.Brand>
+                    <Navbar.Item renderAs="a" className="has-text-weight-bold">
+                        <Link href="/">Next.js</Link>
+                    </Navbar.Item>
+                    <Navbar.Burger />
+                </Navbar.Brand>
+                <Navbar.Menu >
+                    <Navbar.Container>
+                        <Navbar.Item><Link href="/">Home</Link></Navbar.Item>
+                        <Navbar.Item href="/posts"><Link href="/posts">Posts</Link></Navbar.Item>
+                        <Navbar.Item href="/about"><Link href="/about">About</Link></Navbar.Item>
+                        <Navbar.Item href="/contact"><Link href="/contact">Contact</Link></Navbar.Item>
+                        <Navbar.Item href="/bulma"><Link href="/bulma">Bulma</Link></Navbar.Item>
+                    </Navbar.Container>
+                </Navbar.Menu>
+            </Navbar>
         </nav>
       </header>
 
-      <div className="container" style={{ width: '90%', margin:'0 auto'}}>
+      <main className="container">
 
       {children}
 
-      </div>
+      </main>
 
-      <footer style={{textAlign: 'center'}}>{'I`m here to stay'}</footer>
+      <footer className="has-text-centered">{'Footer'}</footer>
     </div>
   )
 }
