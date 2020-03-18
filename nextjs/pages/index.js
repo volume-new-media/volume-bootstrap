@@ -1,5 +1,5 @@
-import Head from 'next/head'
 import Layout from '../components/layout'
+
 import { Accordion, AccordionItem, AccordionTitle, AccordionContent } from 'react-foundation';
 import { Badge } from 'react-foundation';
 import { Breadcrumbs, BreadcrumbItem } from 'react-foundation';
