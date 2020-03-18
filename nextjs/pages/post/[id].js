@@ -8,12 +8,12 @@ const Post = ({ post }) => {
     if (router.isFallback) {
         return (
           <Layout title="Loading...">
-            <pre style="position: fixed; top: 50%; left: 50%;">Loading...</pre>
+            <pre style={{position: 'fixed', top: '50%', left: '50%'}}>Loading...</pre>
           </Layout>
         )
     }
     return (
-      <Layout title="{post.title.rendered}">
+      <Layout title={post.title.rendered}>
           <h2>Post</h2>
           <pre>{JSON.stringify(post, null, 4)}</pre>
       </Layout>
@@ -37,11 +37,11 @@ export async function getStaticProps(context) {
     }
 }
 
-//export async function getStaticPaths() {
-    //return {
-        //paths: [{ params: { id: '1' } }],
-        //fallback: true // Load posts from the server
-    //};
-//}
+export async function getStaticPaths() {
+    return {
+        paths: [{ params: { id: '1' } }],
+        fallback: true // Load posts from the server
+    };
+}
 
 export default Post
