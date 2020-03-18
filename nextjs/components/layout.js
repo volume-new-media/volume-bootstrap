@@ -33,7 +33,8 @@ const Layout = ({ children, title = 'This is the default title' }) => {
                         <Navbar.Item href="/posts"><Link href="/posts">Posts</Link></Navbar.Item>
                         <Navbar.Item href="/about"><Link href="/about">About</Link></Navbar.Item>
                         <Navbar.Item href="/contact"><Link href="/contact">Contact</Link></Navbar.Item>
-                        <Navbar.Item href="/bulma"><Link href="/bulma">Bulma</Link></Navbar.Item>
+                        <Navbar.Item href="/bulma"><Link href="/bulma">Bulma UI</Link></Navbar.Item>
+                        <Navbar.Item href="/material"><Link href="/material">Material UI</Link></Navbar.Item>
                     </Navbar.Container>
                 </Navbar.Menu>
             </Navbar>
