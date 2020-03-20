@@ -1,4 +1,4 @@
-name: headless-wordpress
+name: volume-wp
 recipe: wordpress
 config:
   php: '7.2'
