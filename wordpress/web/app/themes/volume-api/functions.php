@@ -2,8 +2,9 @@
 /**
  * Volume API
  */
+global $config;
 
-require_once dirname(__FILE__).'/config.php';
+$config = include dirname(__FILE__).'/config.php';
 
 if (class_exists('ACF')) {
     require_once dirname(__FILE__).'/inc/acf/acf.php';
@@ -12,7 +13,7 @@ if (class_exists('ACF')) {
 }
 
 require_once dirname(__FILE__).'/inc/admin.php';
-
 require_once dirname(__FILE__).'/inc/images.php';
-
 require_once dirname(__FILE__).'/inc/menus.php';
+
+require_once dirname(__FILE__).'/inc/_debug.php';

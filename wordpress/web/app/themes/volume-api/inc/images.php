@@ -23,12 +23,12 @@ add_filter('upload_mimes', function ($mimes) {
 add_theme_support('post-thumbnails');
 
 // Define image sizes
-update_option('thumbnail_size_w', 275);
-update_option('thumbnail_size_h', 275);
-update_option('thumbnail_crop', 1);
-update_option('medium_size_w', 440);
-update_option('medium_size_h', 440);
-update_option('medium_crop', 0);
-update_option('large_size_w', 1070);
-update_option('large_size_h', 1070);
-update_option('large_crop', 0);
+update_option('thumbnail_size_w', $config['images']['thumbnail']['width']);
+update_option('thumbnail_size_h', $config['images']['thumbnail']['height']);
+update_option('thumbnail_crop', $config['images']['thumbnail']['crop']);
+update_option('medium_size_w', $config['images']['thumbnail']['width']);
+update_option('medium_size_h', $config['images']['thumbnail']['height']);
+update_option('medium_crop', $config['images']['thumbnail']['crop']);
+update_option('large_size_w', $config['images']['thumbnail']['width']);
+update_option('large_size_h', $config['images']['thumbnail']['height']);
+update_option('large_crop', $config['images']['thumbnail']['crop']);

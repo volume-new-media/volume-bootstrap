@@ -3,10 +3,21 @@
  * ACF
  */
 
+defined('ACF_LITE') || define('ACF_LITE', true);
+/* if (WP_ENV !== 'development') { */
+/*     defined('ACF_LITE') || define('ACF_LITE', true); */
+/* } */
+
+add_action('the_post', function ($post_object) {
+    $post_object->fields = get_fields($post_object->ID);
+
+    return $post_object;
+});
+
 function acf_field_helper($namespace, $name, $type, $args = array())
 {
     return array_merge(array(
-        'key' => "field_".$namespace."_".$name,
+        'key' => 'field_'.$namespace.'_'.$name,
         'label' => ucfirst(array_slice(explode('_', $name), -1)[0]),
         'name' => $namespace.'_'.$name,
         'type' => $type,
