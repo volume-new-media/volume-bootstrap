@@ -1,0 +1,71 @@
+{
+  "name": "dieselcare",
+  "version": "1.0.0",
+  "description": "Diesel Care",
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "babel-preset-env": "^1.7.0",
+    "babelify": "^10.0.0",
+    "browser-sync": "^2.26.7",
+    "browserify": "^16.5.0",
+    "browserify-shim": "^3.8.14",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.0",
+    "gulp-iconfont": "^10.0.3",
+    "gulp-iconfont-css": "^3.0.0",
+    "gulp-load-plugins": "^2.0.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify-es": "^1.0.4",
+    "panini": "^1.6.3",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0",
+    "yarn-upgrade-all": "^0.5.2"
+  },
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp sass"
+  },
+  "repository": {
+    "postinstall": "bower install",
+    "type": "git",
+    "url": "https://github.com/zurb/foundation-sites-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zurb/foundation-sites/issues",
+    "email": "foundation@zurb.com"
+  },
+  "author": "ZURB <foundation@zurb.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
+    "animate.css": "^3.7.2",
+    "foundation-sites": "^6.5.3",
+    "inline-svg": "^2.2.3",
+    "jquery": "^3.4.1",
+    "jquery-debouncedresize": "^0.0.2",
+    "jquery-migrate": "^3.1.0",
+    "js-cookie": "^2.2.1",
+    "motion-ui": "^2.0.3",
+    "objectFitPolyfill": "^2.3.0",
+    "slick-carousel": "^1.8.1",
+    "slick-carousel-browserify": "^1.6.12",
+    "what-input": "^5.2.3"
+  },
+  "browser": {
+    "jquery": "./node_modules/jquery/dist/jquery.js",
+    "foundation": "./node_modules/foundation-sites/dist/js/foundation.js"
+  },
+  "browserify-shim": {
+    "jquery": "$",
+    "foundation": "foundation"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  }
+}
