@@ -1,4 +1,4 @@
-name: headless-nextjs
+name: volume-nextjs
 services:
   node:
     type: node:10
@@ -8,7 +8,7 @@ services:
     port: 3000
 proxy:
   node:
-    - headless-nextjs.lndo.site:3000
+    - volume-nextjs.lndo.site:3000
 tooling:
   yarn:
     service: node

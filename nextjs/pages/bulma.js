@@ -18,7 +18,7 @@ import { Radio, RadioGroup } from 'react-bulma-components';
 import { Section, Select, SelectControlled } from 'react-bulma-components';
 import { Table, Tabs, Tag, Textarea, Til } from 'react-bulma-components';
 
-const Bulma = () => {
+const PageBulma = () => {
     const ref = React.createRef();
 
     // const state =  {
@@ -74,7 +74,7 @@ const Bulma = () => {
                 >
                     <Media>
                         <Media.Item renderAs="figure" position="left">
-                            <Image size={64} alt="64x64" src="http://bulma.io/images/placeholders/128x128.png" />
+                            <Image size={64} alt="64x64" src="https://bulma.io/images/placeholders/128x128.png" />
                         </Media.Item>
                         <Media.Item>
                             <Content>
@@ -233,7 +233,7 @@ const Bulma = () => {
                 </Button.Group>
                 <Button.Group
                     hasAddons={false}
-                    position="default" // centered, right
+                    position={undefined} // centered, right
                     size="small" // 'medium', 'large'
                 >
                     <Button
@@ -255,24 +255,16 @@ const Bulma = () => {
                         Cancel
                     </Button>
                 </Button.Group>
-                <Button.Group>
-                    <Button onClick={() => ref.current.click()}>click other button</Button>
-                    <Button
-                        ref={ref}
-                        onClick={() => console.log('clicked')}>
-                            this will be clicked
-                    </Button>
-                </Button.Group>
             </Section>
 
             <Section>
                 <h1 className="title">Cards</h1>
                 <Card>
-                    <Card.Image size="4by3" src="http://bulma.io/images/placeholders/1280x960.png" />
+                    <Card.Image size="4by3" src="https://bulma.io/images/placeholders/1280x960.png" />
                     <Card.Content>
                         <Media>
                             <Media.Item renderAs="figure" position="left">
-                                <Image size={64} alt="64x64" src="http://bulma.io/images/placeholders/128x128.png" />
+                                <Image size={64} alt="64x64" src="https://bulma.io/images/placeholders/128x128.png" />
                             </Media.Item>
                             <Media.Item>
                                 <Heading size={4}>John Smith</Heading>
@@ -296,7 +288,7 @@ const Bulma = () => {
                     <Card.Content>
                         <Media>
                             <Media.Item renderAs="figure" position="left">
-                                <Image size={64} alt="64x64" src="http://bulma.io/images/placeholders/128x128.png" />
+                                <Image size={64} alt="64x64" src="https://bulma.io/images/placeholders/128x128.png" />
                             </Media.Item>
                             <Media.Item>
                                 <Heading size={4}>John Smith</Heading>
@@ -368,8 +360,8 @@ const Bulma = () => {
                     </Columns.Column>
                 </Columns>
                 <Columns>
-                    <Columns.Column size="one-quater">
-                        <p className="bd-notification is-success">one-quater</p>
+                    <Columns.Column size="one-quarter">
+                        <p className="bd-notification is-success">one-quarter</p>
                     </Columns.Column>
                     <Columns.Column>
                         <p className="bd-notification is-info">Auto</p>
@@ -384,24 +376,24 @@ const Bulma = () => {
                     </Columns.Column>
                 </Columns>
                 <Columns>
-                    <Columns.Column size="two-fifth">
-                        <p className="bd-notification is-success">two-fifth</p>
+                    <Columns.Column size="two-fifths">
+                        <p className="bd-notification is-success">two-fifths</p>
                     </Columns.Column>
                     <Columns.Column>
                         <p className="bd-notification is-info">Auto</p>
                     </Columns.Column>
                 </Columns>
                 <Columns>
-                    <Columns.Column size="three-fifth">
-                        <p className="bd-notification is-success">three-fifth</p>
+                    <Columns.Column size="three-fifths">
+                        <p className="bd-notification is-success">three-fifths</p>
                     </Columns.Column>
                     <Columns.Column>
                         <p className="bd-notification is-info">Auto</p>
                     </Columns.Column>
                 </Columns>
                 <Columns>
-                    <Columns.Column size="four-fifth">
-                        <p className="bd-notification is-success">four-fifth</p>
+                    <Columns.Column size="four-fifths">
+                        <p className="bd-notification is-success">four-fifths</p>
                     </Columns.Column>
                     <Columns.Column>
                         <p className="bd-notification is-info">Auto</p>
@@ -670,17 +662,17 @@ const Bulma = () => {
             </Section>
 
             <Section>
-                <Columns mobile>
+                <Columns mobile="true">
                     <Columns.Column size="half" offset="one-quarter">
                         <p className="bd-notification is-info">size half<br />offset one-quarter</p>
                     </Columns.Column>
                 </Columns>
-                <Columns mobile>
+                <Columns mobile="true">
                     <Columns.Column size={4} offset={8}>
                         <p className="bd-notification is-info">size 4<br />offset 8</p>
                     </Columns.Column>
                 </Columns>
-                <Columns mobile>
+                <Columns mobile="true">
                     <Columns.Column size={11} offset={1}>
                         <p className="bd-notification is-info">size 11<br />offset 1</p>
                     </Columns.Column>
@@ -849,28 +841,28 @@ const Bulma = () => {
             <Section>
                 <h1 className="title">Containers</h1>
                 <Container>
-                    <p className="bd-notification is-success">
+                    <div className="bd-notification is-success">
                         <Heading size={5} renderAs="p">Default</Heading>
                         <Heading subtitle renderAs="p">Container</Heading>
-                    </p>
+                    </div>
                 </Container>
                 <Container fluid>
-                    <p className="bd-notification is-info">
+                    <div className="bd-notification is-info">
                         <Heading size={5} renderAs="p">Fluid</Heading>
                         <Heading subtitle renderAs="p">Container</Heading>
-                    </p>
+                    </div>
                 </Container>
                 <Container breakpoint="widescreen">
-                    <p className="bd-notification is-warning">
+                    <div className="bd-notification is-warning">
                         <Heading size={5} renderAs="p">Breakpoint Widescreen</Heading>
                         <Heading subtitle renderAs="p">Container</Heading>
-                    </p>
+                    </div>
                 </Container>
                 <Container breakpoint="fullhd">
-                    <p className="bd-notification is-danger">
+                    <div className="bd-notification is-danger">
                         <Heading size={5} renderAs="p">Breakpoint Fullhd</Heading>
                         <Heading subtitle renderAs="p">Container</Heading>
-                    </p>
+                    </div>
                 </Container>
             </Section>
 
@@ -958,8 +950,8 @@ const Bulma = () => {
                     <h5>Fifth level</h5>
                     <p>Aliquam sagittis rhoncus vulputate. Cras non luctus sem, sed tincidunt ligula. Vestibulum at nunc elit. Praesent aliquet ligula mi, in luctus elit volutpat porta. Phasellus molestie diam vel nisi sodales, a eleifend augue laoreet. Sed nec eleifend justo. Nam et sollicitudin odio.</p>
                     <figure>
-                        <img alt="256" src="http://bulma.io/images/placeholders/256x256.png" />
-                        <img alt="other" src="http://bulma.io/images/placeholders/256x256.png" />
+                        <img alt="256" src="https://bulma.io/images/placeholders/256x256.png" />
+                        <img alt="other" src="https://bulma.io/images/placeholders/256x256.png" />
                         <figcaption>
                             Figure 1: Some beautiful placeholders
                         </figcaption>
@@ -1050,8 +1042,8 @@ const Bulma = () => {
                     <h5>Fifth level</h5>
                     <p>Aliquam sagittis rhoncus vulputate. Cras non luctus sem, sed tincidunt ligula. Vestibulum at nunc elit. Praesent aliquet ligula mi, in luctus elit volutpat porta. Phasellus molestie diam vel nisi sodales, a eleifend augue laoreet. Sed nec eleifend justo. Nam et sollicitudin odio.</p>
                     <figure>
-                        <img alt="256" src="http://bulma.io/images/placeholders/256x256.png" />
-                        <img alt="other" src="http://bulma.io/images/placeholders/256x256.png" />
+                        <img alt="256" src="https://bulma.io/images/placeholders/256x256.png" />
+                        <img alt="other" src="https://bulma.io/images/placeholders/256x256.png" />
                         <figcaption>
                             Figure 1: Some beautiful placeholders
                         </figcaption>
@@ -1388,7 +1380,7 @@ const Bulma = () => {
                             <td />
                             <td style={{ width: 100 }}>image</td>
                             <td style={{ width: 128 }}>
-                                <Image rounded={false} src="http://bulma.io/images/placeholders/640x480.png" size="3by2" />
+                                <Image rounded={false} src="https://bulma.io/images/placeholders/640x480.png" size="3by2" />
                             </td>
                             <td />
                         </tr>
@@ -1396,22 +1388,22 @@ const Bulma = () => {
                             <td />
                             <td style={{ width: 100 }}>rounded</td>
                             <td style={{ width: 128 }}>
-                                <Image rounded={true} src="http://bulma.io/images/placeholders/640x480.png" size="3by2" />
+                                <Image rounded={true} src="https://bulma.io/images/placeholders/640x480.png" size="3by2" />
                             </td>
                             <td />
                         </tr>
                     </tbody>
                 </Table>
                 <div style={{ width: 320 }}>
-                    <Image src="http://bulma.io/images/placeholders/640x480.png" size="3by2" />
+                    <Image src="https://bulma.io/images/placeholders/640x480.png" size="3by2" />
                 </div>
-                <Image src="http://bulma.io/images/placeholders/640x480.png" size="3by2" />
+                <Image src="https://bulma.io/images/placeholders/640x480.png" size="3by2" />
             </Section>
-            <Image src="http://bulma.io/images/placeholders/640x480.png" size="3by2" />
+            <Image src="https://bulma.io/images/placeholders/640x480.png" size="3by2" />
 
         <Section>
             <Navbar
-                color="default"
+                color={null}
                 fixed={undefined} // 'top', 'bottom'
                 active={false}
                 transparent={false}
@@ -1444,4 +1436,4 @@ const Bulma = () => {
     )
 }
 
-export default Bulma
+export default PageBulma
